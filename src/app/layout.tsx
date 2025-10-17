@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import SakuraBackground from "@/components/common/sakura";
+import HeaderMenu from "@/components/common/headerMenu";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,11 +25,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ja">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <header>
+          <HeaderMenu />
+        </header>
+        <SakuraBackground />
         {children}
+        <footer>
+          <div className="flex items-center justify-center">
+            <p className="text-[12px] text-gray-500">Copyright © 2025 YAMAZAKI Haruto. All rights reserved.</p>
+          </div>
+        </footer>
       </body>
     </html>
   );
