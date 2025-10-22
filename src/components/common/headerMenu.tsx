@@ -23,11 +23,11 @@ const menuItems: MenuItem[] = [
 ];
 
 const socialItems: SocialItem[] = [
-    { label: 'GitHub', link: 'https://github.com/yourusername' },
-    { label: 'Hugging Face', link: 'https://www.linkedin.com/in/yourusername' },
-    { label: 'Twitter(X)', link: 'https://twitter.com/yourusername' },
-    { label: 'Instagram', link: 'https://www.instagram.com/yourusername' },
-    { label: 'Threads', link: 'https://www.facebook.com/yourusername' },
+    { label: 'GitHub', link: 'https://github.com/yharuto0917' },
+    { label: 'Hugging Face', link: 'https://huggingface.co/YHaruto' },
+    { label: 'Twitter(X)', link: 'https://x.com/Yharuto09171700' },
+    { label: 'Instagram', link: 'https://instagram.com/yamazaki.ha' },
+    { label: 'Threads', link: 'https://threads.com/@yamazaki.ha' },
 ];
 
 export default function HeaderMenu() {
@@ -44,7 +44,7 @@ export default function HeaderMenu() {
                 openMenuButtonColor="#f6a1df"
                 changeMenuColorOnOpen={true}
                 colors={['#d49cc7', '#fd90f1']}
-                logoUrl="/next.svg"
+                logoUrl="/yharutoIconLong.svg"
                 accentColor="#ff6b6b"
                 onMenuOpen={() => {}}
                 onMenuClose={() => {}}
