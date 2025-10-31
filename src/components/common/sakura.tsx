@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import { ChildrenProps } from "@/lib/config-ts";
 
 interface Petal {
     id: number;
@@ -12,7 +13,7 @@ return <div className="absolute rounded-full bg-pink-200" style={style}></div>;
 };
 
 // 桜の背景エフェクトを管理するコンポーネント
-const SakuraBackground = () => {
+const SakuraBackground = ({ children }: ChildrenProps) => {
     const [petals, setPetals] = useState<Petal[]>([]);  
     const PETAL_COUNT = 60; // 花びらの数
 
@@ -43,7 +44,7 @@ const SakuraBackground = () => {
     }, []);
 
     return (
-        <>
+        <div className="relative min-h-screen">
             <style>
                 {`
                 @keyframes fall {
@@ -58,12 +59,15 @@ const SakuraBackground = () => {
                 }
                 `}
             </style>
-            <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-[-1]">
+            <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
                 {petals.map(petal => (
                 <SakuraPetal key={petal.id} style={petal.style} />
                 ))}
             </div>
-        </>
+            <div className="relative z-10">
+                {children}
+            </div>
+        </div>
     );
 };
 

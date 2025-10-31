@@ -1,5 +1,7 @@
 'use client';
 import StaggeredMenu from '@/components/ui/StaggeredMenu';
+import RotatingText from '@/components/ui/RotatingText'
+import { motion, LayoutGroup } from 'framer-motion';
 
 
 interface MenuItem {
@@ -49,6 +51,57 @@ export default function HeaderMenu() {
                 onMenuOpen={() => {}}
                 onMenuClose={() => {}}
             />
+            <LayoutGroup>
+                <div className="flex flex-row items-center justify-center text-align-center text-center w-full absolute top-1/4">
+                    <motion.div
+                        layout="position"
+                        transition={{ 
+                            layout: { 
+                                duration: 0.5, 
+                                ease: "easeInOut"
+                            } 
+                        }}
+                        className="text-6xl font-bold text-center whitespace-nowrap"
+                    >
+                        Making AI
+                    </motion.div>
+                    <motion.div
+                        layout="size"
+                        transition={{ 
+                            layout: { 
+                                duration: 0.5, 
+                                ease: "easeInOut"
+                            } 
+                        }}
+                        className="inline-block"
+                    >
+                        <RotatingText
+                            texts={['Helpful', 'Meaningful', 'Valuable', 'Useful', 'Enjoyable']}
+                            mainClassName="mx-5 text-6xl font-bold text-center inline-block bg-red-100 rounded-lg px-4 py-2"
+                            staggerFrom={"last"}
+                            initial={{ y: "100%" }}
+                            animate={{ y: 0 }}
+                            exit={{ y: "-120%" }}
+                            staggerDuration={0.025}
+                            splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+                            transition={{ type: "spring", damping: 30, stiffness: 400 }}
+                            rotationInterval={2000}
+                        />
+                    </motion.div>
+                    <motion.div
+                        layout="position"
+                        transition={{ 
+                            layout: { 
+                                duration: 0.5, 
+                                ease: "easeInOut"
+                            } 
+                        }}
+                        className="text-6xl font-bold text-center whitespace-nowrap"
+                    >
+                        for everyone.
+                    </motion.div>
+                </div>
+            </LayoutGroup>
         </div>
     );
 }

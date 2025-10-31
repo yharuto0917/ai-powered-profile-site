@@ -457,7 +457,8 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
           className="staggered-menu-header absolute top-0 left-0 w-full flex items-center justify-between p-[2em] bg-transparent pointer-events-none z-20"
           aria-label="Main navigation header"
         >
-          <div
+          <a
+            href="/"
             className="sm-logo flex items-center select-none pointer-events-auto"
             aria-label="Logo"
           >
@@ -469,7 +470,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
               width={110}
               height={24}
             />
-          </div>
+          </a>
 
           <GlassCard className="rounded-full !py-1.5 !px-3">
             <button
@@ -485,7 +486,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
             >
               <span
                 ref={textWrapRef}
-                className="sm-toggle-textWrap relative inline-block h-[0.8em] overflow-hidden whitespace-nowrap w-[var(--sm-toggle-width,auto)] min-w-[var(--sm-toggle-width,auto)]"
+                className="sm-toggle-textWrap relative inline-block h-[0.9em] overflow-hidden whitespace-nowrap w-[var(--sm-toggle-width,auto)] min-w-[var(--sm-toggle-width,auto)]"
                 aria-hidden="true"
               >
                 <span
@@ -607,8 +608,8 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 .sm-scope .sm-toggle:focus-visible { outline: 2px solid #ffffffaa; outline-offset: 4px; border-radius: 4px; }
 .sm-scope .sm-line:last-of-type { margin-top: 6px; }
 .sm-scope .sm-toggle-textWrap { position: relative; margin-right: 0.7em; display: inline-block; height: 1em; overflow: hidden; white-space: nowrap; width: var(--sm-toggle-width, auto); min-width: var(--sm-toggle-width, auto); }
-.sm-scope .sm-toggle-textInner { display: flex; flex-direction: column; line-height: 0.8em; }
-.sm-scope .sm-toggle-line { display: block; height: 0.8em; line-height: 0.8em; }
+.sm-scope .sm-toggle-textInner { display: flex; flex-direction: column; line-height: 0.9em; }
+.sm-scope .sm-toggle-line { display: block; height: 0.9em; line-height: 0.9em; }
 .sm-scope .sm-icon { position: relative; width: 24px; height: 24px; flex: 0 0 18px; display: inline-flex; align-items: center; justify-content: center; will-change: transform; }
 .sm-scope .sm-panel-itemWrap { position: relative; overflow: hidden; line-height: 1; }
 .sm-scope .sm-icon-line { position: absolute; left: 50%; top: 50%; width: 100%; height: 2px; background: currentColor; border-radius: 2px; transform: translate(-50%, -50%); will-change: transform; }

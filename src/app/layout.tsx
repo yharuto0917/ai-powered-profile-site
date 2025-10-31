@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  icons: {
+    icon: '/yharutoIcon.svg',
+  },
   title: "Y.Haruto | AI Engineer",
   description: "Y.Haruto is an AI engineer who is passionate about LLMs.",
 };
@@ -29,16 +32,17 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <header>
-          <HeaderMenu />
-        </header>
-        <SakuraBackground />
-        {children}
-        <footer>
-          <div className="flex items-center justify-center">
-            <p className="text-[12px] text-gray-500">Copyright © 2025 YAMAZAKI Haruto. All rights reserved.</p>
-          </div>
-        </footer>
+        <SakuraBackground>
+          <header>
+            <HeaderMenu />
+          </header>
+          {children}
+          <footer>
+            <div className="flex items-center justify-center">
+              <p className="text-[12px] text-gray-500">Copyright © 2025 YAMAZAKI Haruto. All rights reserved.</p>
+            </div>
+          </footer>
+        </SakuraBackground>
       </body>
     </html>
   );
