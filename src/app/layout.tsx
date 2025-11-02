@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import SakuraBackground from "@/components/common/sakura";
 import HeaderMenu from "@/components/common/headerMenu";
+import AskMeWithAI from "@/components/common/askMeWithAI";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,6 +38,7 @@ export default function RootLayout({
             <HeaderMenu />
           </header>
           {children}
+          <AskMeWithAI />
           <footer>
             <div className="flex items-center justify-center">
               <p className="text-[12px] text-gray-500">Copyright © 2025 YAMAZAKI Haruto. All rights reserved.</p>
