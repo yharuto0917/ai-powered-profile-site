@@ -9,13 +9,12 @@ interface GlassCardProps {
 const GlassCard: React.FC<GlassCardProps> = ({ children, className = '', style }) => {
     const baseClasses = `
     p-8
-    bg-white/10
-    backdrop-blur-md
-    rounded-2xl
-    border border-white/20
-    shadow-lg
-    text-white
-    opacity-80
+    bg-pink-300/10 opacity-80
+    backdrop-blur-xl
+    rounded-3xl
+    shadow-2xl
+    shadow-pink-500/20
+    text-black
     `;
 
     const combinedClasses = `${baseClasses} ${className}`.trim();

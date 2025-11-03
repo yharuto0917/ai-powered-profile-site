@@ -34,7 +34,7 @@ const socialItems: SocialItem[] = [
 
 export default function HeaderMenu() {
     return (
-        <div style={{ height: '100vh', width: '100vw' }}>
+        <div style={{ height: '100vh', width: '100%', overflowX: 'hidden' }}>
             <StaggeredMenu
                 position="right"
                 isFixed={true}
