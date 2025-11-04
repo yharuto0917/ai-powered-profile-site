@@ -6,18 +6,25 @@ import { motion } from "framer-motion";
 
 export default function IntroBox() {
     return (
-        <GlassCard style={{ maxWidth: '1000px', margin: "0 auto" }}>
+        <>
             <motion.div
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 viewport={{ once: true, amount: 0.4 }}
             >
-                <div className="flex justify-left gap-4">
-                    <h2 className="text-2xl font-bold mb-4">Introduce Myself</h2>
-                </div>
-                <div className="flex justify-center gap-2">
-                    <Image src="/yharutoIcon.svg" alt="Intro 1" width={100} height={100} className="mx-4" />
+                <Image src="/yharutoIcon.svg" alt="Intro 1" width={150} height={150} className="mx-20" />
+            </motion.div>
+            <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            viewport={{ once: true, amount: 0.4 }}
+            >
+                <GlassCard style={{ maxWidth: '50rem', margin: "0 auto" }}>
+                    <div className="flex justify-left gap-4">
+                        <h2 className="text-2xl font-bold mb-4">Introduce Myself</h2>
+                    </div>
                     <div className="flex flex-col gap-2">
                         <p className="text-gray-700 text-2xl font-bold">
                             Y.Haruto
@@ -30,8 +37,8 @@ export default function IntroBox() {
                             I am also developing web applications using Next.js, Vite, React, TypeScript, Tailwind CSS and more.
                         </p>
                     </div>
-                </div>
+                </GlassCard>
             </motion.div>
-        </GlassCard>
+        </>
     )
 }
