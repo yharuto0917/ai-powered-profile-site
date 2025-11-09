@@ -40,7 +40,7 @@ export default function RootLayout({
           {children}
           <AskMeWithAI />
           <footer>
-            <div className="flex items-center justify-center">
+            <div className="flex items-center justify-center py-3">
               <p className="text-[12px] text-gray-500">Copyright © 2025 YAMAZAKI Haruto. All rights reserved.</p>
             </div>
           </footer>

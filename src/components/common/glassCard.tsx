@@ -15,6 +15,7 @@ const GlassCard: React.FC<GlassCardProps> = ({ children, className = '', style }
     shadow-2xl
     shadow-pink-500/20
     text-black
+    border border-pink-500/20
     `;
 
     const combinedClasses = `${baseClasses} ${className}`.trim();
