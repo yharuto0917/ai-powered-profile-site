@@ -76,6 +76,7 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --font-caveat: var(--font-caveat);
 }
 
 .dark {
@@ -116,9 +117,12 @@
   * {
     @apply border-border outline-ring/50;
   }
-  html, body {
+
+  html,
+  body {
     overflow-x: hidden;
   }
+
   body {
     @apply text-foreground;
   }
@@ -128,12 +132,15 @@
   0% {
     transform: translate(0px, 0px) scale(1);
   }
+
   33% {
     transform: translate(30px, -50px) scale(1.1);
   }
+
   66% {
     transform: translate(-20px, 20px) scale(0.9);
   }
+
   100% {
     transform: translate(0px, 0px) scale(1);
   }
@@ -149,4 +156,8 @@
 
 .animation-delay-4000 {
   animation-delay: 4s;
+}
+
+.title-font {
+  font-family: var(--font-caveat), sans-serif;
 }

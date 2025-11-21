@@ -13,10 +13,10 @@ export default function IntroBox() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.4 }}
             >
-                <div className="flex items-center justify-center bg-pink-300/10 opacity-80">
+                <div className="flex items-center justify-center bg-pink-300/10 opacity-80 m-2">
                     <div className="flex items-center justify-center gap-4">
                         <Image src="/yharutoIcon.svg" alt="Intro 1" width={150} height={150} className="mx-10" />
-                        <div className="flex flex-col gap-2 p-5">
+                        <div className="flex flex-col gap-2 p-10">
                             <p className="text-gray-700 text-4xl font-bold">
                                 Y.Haruto
                             </p>
