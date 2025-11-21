@@ -7,7 +7,6 @@ import React, {
   useEffect,
 } from "react";
 import { gsap } from "gsap";
-import { GlassCard } from "@/components/common/glassCard";
 
 export interface StaggeredMenuItem {
   label: string;
@@ -472,12 +471,11 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
             />
           </a>
 
-          <GlassCard className="rounded-full !py-1.5 !px-3">
+          <div className="bg-white/90 rounded-full shadow-md border border-pink-100 px-3 py-1.5">
             <button
               ref={toggleBtnRef}
-              className={`sm-toggle relative inline-flex items-center gap-[0.3rem] bg-transparent border-0 cursor-pointer font-medium leading-none overflow-visible pointer-events-auto ${
-                open ? "text-black" : "text-[#e9e9ef]"
-              }`}
+              className={`sm-toggle relative inline-flex items-center gap-[0.3rem] bg-transparent border-0 cursor-pointer font-medium leading-none overflow-visible pointer-events-auto ${open ? "text-black" : "text-[#e9e9ef]"
+                }`}
               aria-label={open ? "Close menu" : "Open menu"}
               aria-expanded={open}
               aria-controls="staggered-menu-panel"
@@ -504,22 +502,22 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                 </span>
               </span>
 
-            <span
-              ref={iconRef}
-              className="sm-icon relative w-[18px] h-[18px] shrink-0 inline-flex items-center justify-center [will-change:transform]"
-              aria-hidden="true"
-            >
               <span
-                ref={plusHRef}
-                className="sm-icon-line absolute left-1/2 top-1/2 w-full h-[2px] bg-current rounded-[2px] -translate-x-1/2 -translate-y-1/2 [will-change:transform]"
-              />
-              <span
-                ref={plusVRef}
-                className="sm-icon-line sm-icon-line-v absolute left-1/2 top-1/2 w-full h-[2px] bg-current rounded-[2px] -translate-x-1/2 -translate-y-1/2 [will-change:transform]"
-              />
-            </span>
-          </button>
-          </GlassCard>
+                ref={iconRef}
+                className="sm-icon relative w-[18px] h-[18px] shrink-0 inline-flex items-center justify-center [will-change:transform]"
+                aria-hidden="true"
+              >
+                <span
+                  ref={plusHRef}
+                  className="sm-icon-line absolute left-1/2 top-1/2 w-full h-[2px] bg-current rounded-[2px] -translate-x-1/2 -translate-y-1/2 [will-change:transform]"
+                />
+                <span
+                  ref={plusVRef}
+                  className="sm-icon-line sm-icon-line-v absolute left-1/2 top-1/2 w-full h-[2px] bg-current rounded-[2px] -translate-x-1/2 -translate-y-1/2 [will-change:transform]"
+                />
+              </span>
+            </button>
+          </div>
         </header>
 
         <aside
