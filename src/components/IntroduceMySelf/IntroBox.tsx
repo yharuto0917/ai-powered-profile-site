@@ -16,8 +16,7 @@ export default function IntroBox() {
                 <div className="flex items-center justify-center bg-pink-300/10 opacity-80">
                     <div className="flex items-center justify-center gap-4">
                         <Image src="/yharutoIcon.svg" alt="Intro 1" width={150} height={150} className="mx-10" />
-                        <div className="flex flex-col gap-2">
-                            <h2 className="text-4xl font-bold mb-4">Introduce Myself</h2>
+                        <div className="flex flex-col gap-2 p-5">
                             <p className="text-gray-700 text-4xl font-bold">
                                 Y.Haruto
                             </p>
