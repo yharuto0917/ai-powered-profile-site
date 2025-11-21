@@ -5,7 +5,7 @@ import { motion, LayoutGroup } from 'framer-motion';
 export default function HeroSection() {
     return (
         <LayoutGroup>
-            <div className="flex flex-col sm:flex-row items-center justify-center text-center absolute top-1/7 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full px-4 gap-2 sm:gap-0">
+            <div className="flex flex-col sm:flex-row items-center justify-center text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full px-4 gap-2 sm:gap-0">
                 <motion.div layout="position" className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center">
                     Making AI
                 </motion.div>
