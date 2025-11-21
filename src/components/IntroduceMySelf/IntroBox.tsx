@@ -13,7 +13,7 @@ export default function IntroBox() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.4 }}
             >
-                <GlassCard>
+                <div className="flex items-center justify-center bg-pink-300/10 opacity-80">
                     <div className="flex items-center justify-center gap-4">
                         <Image src="/yharutoIcon.svg" alt="Intro 1" width={150} height={150} className="mx-10" />
                         <div className="flex flex-col gap-2">
@@ -31,7 +31,7 @@ export default function IntroBox() {
                             </p>
                         </div>
                     </div>
-                </GlassCard>
+                </div>
             </motion.div>
         </>
     )
