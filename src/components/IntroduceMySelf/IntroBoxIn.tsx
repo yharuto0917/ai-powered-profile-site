@@ -2,8 +2,8 @@ import Image from 'next/image'
 
 export default function IntroBoxIn(){
     return(
-        <>
-            <div className="flex items-center justify-center bg-white/90 rounded-3xl shadow-xl shadow-pink-100/50 border border-pink-100 m-2 p-8">
+        <div id='skills'>
+            <div className="flex items-center justify-center bg-white/90 rounded-3xl shadow-xl shadow-pink-100/50 border border-pink-100 m-2 py-10">
                 <div className="flex items-center justify-center gap-15">
                     <Image src="/yharutoIcon.svg" alt="Intro 1" width={150} height={150} className="rounded-full border-4 border-pink-50" />
                     <div className="flex flex-col gap-4">
@@ -21,6 +21,6 @@ export default function IntroBoxIn(){
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     )
 }

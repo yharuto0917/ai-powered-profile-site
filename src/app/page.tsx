@@ -1,5 +1,6 @@
 import IntroBox from "@/components/IntroduceMySelf/IntroBox";
 import MySkills from "@/components/IntroduceMySelf/mySkills";
+import SNSBox from "@/components/IntroduceMySelf/SNSBox";
 import HeroSection from "@/components/common/HeroSection";
 
 export default function Home() {
@@ -8,10 +9,11 @@ export default function Home() {
       <div style={{ height: '100vh', width: '100%', overflowX: 'hidden', position: 'relative' }}>
         <HeroSection />
       </div>
-      <div className="flex items-center justify-center min-h-screen p-4 mb-30 sm:p-8">
+      <div className="flex flex-col justify-center items-center pb-30">
         <div className="w-full max-w-[75rem]">
           <IntroBox />
           <MySkills />
+          <SNSBox />
         </div>
       </div>
     </>

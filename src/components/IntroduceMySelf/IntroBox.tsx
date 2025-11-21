@@ -4,7 +4,7 @@ import IntroBoxIn from "./IntroBoxIn";
 
 export default function IntroBox() {
     return (
-        <>
+        <div id="about">
             <motion.div
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -14,6 +14,6 @@ export default function IntroBox() {
                 <h2 className="title-font text-4xl font-bold -rotate-4 ml-20 z-5 relative">Introduce Myself</h2>
                 <IntroBoxIn />
             </motion.div>
-        </>
+        </div>
     )
 }

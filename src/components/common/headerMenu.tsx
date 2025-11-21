@@ -14,11 +14,10 @@ interface SocialItem {
 
 const menuItems: MenuItem[] = [
     { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
-    { label: 'About', ariaLabel: 'Learn about us', link: '/about' },
-    { label: 'Skills', ariaLabel: 'View my skills', link: '/skills' },
-    { label: 'Photos', ariaLabel: 'View my photos', link: '/photos' },
-    { label: 'Ask Me with AI', ariaLabel: 'Ask me with AI', link: '/ask-me-with-ai' },
-    { label: 'SNS', ariaLabel: 'View my SNS', link: '/sns' }
+    { label: 'About', ariaLabel: 'Learn about us', link: '#about' },
+    { label: 'Skills', ariaLabel: 'View my skills', link: '#skills' },
+    { label: 'SNS', ariaLabel: 'View my SNS', link: '#sns' },
+    { label: 'Blog', ariaLabel: 'Visit my blog site', link: '/' },
 ];
 
 const socialItems: SocialItem[] = [
@@ -27,6 +26,7 @@ const socialItems: SocialItem[] = [
     { label: 'Twitter(X)', link: 'https://x.com/Yharuto09171700' },
     { label: 'Instagram', link: 'https://instagram.com/yamazaki.ha' },
     { label: 'Threads', link: 'https://threads.com/@yamazaki.ha' },
+    { label: 'Zenn', link: 'https://zenn.dev/oimachi'}
 ];
 
 export default function HeaderMenu() {
