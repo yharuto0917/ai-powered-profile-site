@@ -10,11 +10,8 @@ export default function Home() {
       </div>
       <div className="flex items-center justify-center min-h-screen p-4 mb-30 sm:p-8">
         <div className="w-full max-w-[75rem]">
-          <div className="flex flex-col">
-            <h2 className="title-font text-4xl font-bold -rotate-4 ml-20 z-5 relative">Introduce Myself</h2>
-            <IntroBox />
-            <MySkills />
-          </div>
+          <IntroBox />
+          <MySkills />
         </div>
       </div>
     </>
