@@ -1,5 +1,6 @@
 import IntroBox from "@/components/IntroduceMySelf/IntroBox";
 import MySkills from "@/components/IntroduceMySelf/mySkills";
+import ChangeLog from "@/components/IntroduceMySelf/changelog";
 import SNSBox from "@/components/IntroduceMySelf/SNSBox";
 import HeroSection from "@/components/common/HeroSection";
 
@@ -13,6 +14,7 @@ export default function Home() {
         <div className="w-full max-w-[75rem]">
           <IntroBox />
           <MySkills />
+          <ChangeLog />
           <SNSBox />
         </div>
       </div>
