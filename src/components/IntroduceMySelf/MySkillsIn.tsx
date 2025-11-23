@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function MySkillsIn() {
     return (
-        <div className="flex justify-center pt-5">
+        <div className="flex justify-center pt-5 mb-20">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
                 {/* Programming Languages */}
                 <div className="flex flex-col gap-2 bg-white/90 rounded-3xl shadow-lg shadow-pink-100 border border-pink-100 p-8 w-full">
