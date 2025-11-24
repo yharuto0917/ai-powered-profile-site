@@ -4,7 +4,7 @@ import IntroBoxIn from "./IntroBoxIn";
 
 export default function IntroBox() {
     return (
-        <div id="about" className="mt-20 mb-60">
+        <div id="about" className="mt-20 mb-80">
             <motion.div
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
