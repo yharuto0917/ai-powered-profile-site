@@ -7,11 +7,9 @@ export default function ChangeLogIn() {
     return (
         <div className="pt-15 pb-10">
             {changelogs.map((changelog, index) => (
-                <a
+                <div
                     key={changelog.title}
-                    href={changelog.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    onClick={() => window.open(changelog.url, '_blank')}
                     className="flex gap-6 group cursor-pointer mb-2"
                 >
                     {/* Timeline Column */}
@@ -34,11 +32,19 @@ export default function ChangeLogIn() {
                             </div>
                             <h2 className="title-font text-xl text-gray-500 mb-2">{changelog.date}</h2>
                             <div className="prose prose-pink max-w-none">
-                                <ReactMarkdown>{changelog.contents}</ReactMarkdown>
+                                <ReactMarkdown
+                                    components={{
+                                        a: ({ node, ...props }) => (
+                                            <a {...props} onClick={(e) => e.stopPropagation()} target="_blank" rel="noopener noreferrer" />
+                                        )
+                                    }}
+                                >
+                                    {changelog.contents}
+                                </ReactMarkdown>
                             </div>
                         </div>
                     </div>
-                </a>
+                </div>
             ))}
         </div>
     );
