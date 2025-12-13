@@ -19,7 +19,7 @@ export default function SNSBox() {
                         Social Media
                     </h2>
                     <div className="bg-white/90 rounded-3xl shadow-lg shadow-pink-100 border border-pink-100 p-5 sm:p-6 m-2 w-full">
-                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6">
+                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 place-items-center">
                             {/* GitHub */}
                             <Link href="https://github.com/yharuto0917" target="_blank" rel="noopener noreferrer"
                                 className="flex flex-col items-center gap-2 sm:gap-3 group p-3 sm:p-4 rounded-2xl hover:bg-pink-50/50 transition-all duration-300">
