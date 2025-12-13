@@ -139,7 +139,7 @@ export default function AskMeWithAI() {
     };
 
     return (
-        <div className="fixed bottom-10 left-1/2 -translate-x-1/2 z-50">
+        <div className="fixed bottom-12 left-1/2 -translate-x-1/2 z-50">
             <div className="relative flex justify-center">
                 <div
                     className={`absolute bottom-16 left-1/2 -translate-x-1/2 transition-all duration-700 ease-out ${
