@@ -10,10 +10,12 @@ export default function MySkills() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 viewport={{ once: true, amount: 0.4 }}
-                className="flex justify-center"
+                className="flex justify-center px-4 sm:px-6"
             >
                 <div className="w-full max-w-[65rem]">
-                    <h2 className="title-font text-4xl font-bold -rotate-4 translate-y-2 ml-20 z-5 relative">My Skills</h2>
+                    <h2 className="title-font text-2xl sm:text-3xl md:text-4xl font-bold -rotate-2 md:-rotate-4 translate-y-1 md:translate-y-2 ml-4 sm:ml-12 md:ml-20 z-5 relative">
+                        My Skills
+                    </h2>
                     <MySkillsIn />
                 </div>
             </motion.div>
