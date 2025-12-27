@@ -15,10 +15,10 @@ export default function SNSBox() {
                 className="flex justify-center px-4 sm:px-6"
             >
                 <div className="w-full max-w-[65rem]">
-                    <h2 className="title-font text-2xl sm:text-3xl md:text-4xl font-bold -rotate-2 md:-rotate-4 ml-4 sm:ml-12 md:ml-20 z-5 relative">
+                    <h2 className="title-font text-2xl sm:text-4xl -rotate-4 md:-rotate-2 font-bold ml-10 md:ml-10 relative">
                         Social Media
                     </h2>
-                    <div className="bg-white/90 rounded-3xl shadow-lg shadow-pink-100 border border-pink-100 p-5 sm:p-6 mt-2">
+                    <div className="bg-white/90 rounded-3xl shadow-lg shadow-pink-100 border border-pink-100 p-5 sm:p-6">
                         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 place-items-center">
                             {/* GitHub */}
                             <Link href="https://github.com/yharuto0917" target="_blank" rel="noopener noreferrer"
