@@ -339,6 +339,56 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
     [openMenuButtonColor, menuButtonColor, changeMenuColorOnOpen],
   );
 
+  const scrollToHashCenter = useCallback((hash: string) => {
+    if (!hash || hash === "#") return;
+    const id = hash.replace("#", "");
+    const section = document.getElementById(id);
+    if (!section) return;
+
+    // data-scroll-center="true" を持つ子要素を探す。無ければ section 自身を対象にする
+    const centeredTarget = section.querySelector(
+      '[data-scroll-center="true"]',
+    ) as HTMLElement | null;
+    const target = centeredTarget || section;
+
+    const rect = target.getBoundingClientRect();
+    const scrollY = window.scrollY;
+    const targetTop = rect.top + scrollY;
+    const targetHeight = rect.height;
+    const windowHeight = window.innerHeight;
+
+    // 中央寄せの計算
+    let targetScrollTop = (targetTop + targetHeight / 2) - windowHeight / 2;
+
+    // 固定ヘッダー（ロゴ/メニューボタン）と見出しが重ならないように調整する
+    // NOTE: data-scroll-center が無い場合は section 自身をターゲットにしているため、見出しが上に食い込みやすい
+    if (!centeredTarget) {
+      const header = document.querySelector(
+        ".staggered-menu-header",
+      ) as HTMLElement | null;
+      const headerBottom = header?.getBoundingClientRect().bottom ?? 0;
+      // Framer Motion の initial y(24px) 分も考慮して余白を多めに取る
+      const safeMargin = 8;
+      const safeTop = headerBottom + safeMargin;
+
+      const heading = section.querySelector("h2") as HTMLElement | null;
+      if (heading && headerBottom > 0) {
+        const headingAbsTop = heading.getBoundingClientRect().top + scrollY;
+        const limitTop = headingAbsTop - safeTop;
+        targetScrollTop = Math.min(targetScrollTop, limitTop);
+      }
+    }
+
+    const behavior = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      ? "auto"
+      : "smooth";
+
+    window.scrollTo({
+      top: Math.max(0, targetScrollTop),
+      behavior: behavior as ScrollBehavior,
+    });
+  }, []);
+
   useEffect(() => {
     if (toggleBtnRef.current) {
       if (changeMenuColorOnOpen) {
@@ -351,6 +401,29 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
       }
     }
   }, [changeMenuColorOnOpen, menuButtonColor, openMenuButtonColor]);
+
+  // ハッシュ遷移時の中央寄せスクロール監視
+  useEffect(() => {
+    const handleHashChange = () => {
+      scrollToHashCenter(window.location.hash);
+    };
+
+    // 初期ロード時のハッシュ対応（少し遅延させてマウント後のレイアウト確定を待つ）
+    const timer = setTimeout(() => {
+      if (window.location.hash) {
+        scrollToHashCenter(window.location.hash);
+      }
+    }, 100);
+
+    window.addEventListener("hashchange", handleHashChange);
+    window.addEventListener("popstate", handleHashChange);
+
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("hashchange", handleHashChange);
+      window.removeEventListener("popstate", handleHashChange);
+    };
+  }, [scrollToHashCenter]);
 
   const animateText = useCallback((opening: boolean) => {
     const inner = textInnerRef.current;
@@ -409,6 +482,23 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
     onMenuOpen,
     onMenuClose,
   ]);
+
+  const handleItemClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>, link: string) => {
+    // リンクがハッシュ形式（#から始まる）の場合のみカスタムスクロール
+    if (link.startsWith("#")) {
+      e.preventDefault();
+      toggleMenu();
+      
+      // URLハッシュを更新（履歴に残すため）
+      window.history.pushState(null, "", link);
+      
+      // 即座にスクロールを実行
+      scrollToHashCenter(link);
+    } else {
+      // 通常の遷移
+      toggleMenu();
+    }
+  }, [toggleMenu, scrollToHashCenter]);
 
   return (
     <div
@@ -544,7 +634,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                       href={it.link}
                       aria-label={it.ariaLabel}
                       data-index={idx + 1}
-                      onClick={toggleMenu}
+                      onClick={(e) => handleItemClick(e, it.link)}
                     >
                       <span className="sm-panel-itemLabel inline-block [transform-origin:50%_100%] will-change-transform">
                         {it.label}

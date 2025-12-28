@@ -4,7 +4,7 @@ import MySkillsIn from "./MySkillsIn";
 
 export default function MySkills() {
     return (
-        <div className="pb-30">
+        <div id="skills" className="pb-30">
             <motion.div
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}

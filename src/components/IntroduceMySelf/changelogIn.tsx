@@ -22,7 +22,10 @@ export default function ChangeLogIn() {
                     <div className="flex flex-col pb-10 sm:pb-12 flex-grow">
                         <div className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 group-hover:text-pink-400 transition-colors duration-300">{changelog.title}</div>
 
-                        <div className="bg-white/90 rounded-3xl border-2 border-dotted border-pink-300 p-6 sm:p-7 md:p-8 transition-all duration-300 hover:shadow-xl hover:shadow-pink-100/50 hover:-translate-y-1 w-full">
+                        <div 
+                            data-scroll-center={index === 0 ? "true" : undefined}
+                            className="bg-white/90 rounded-3xl border-2 border-dotted border-pink-300 p-6 sm:p-7 md:p-8 transition-all duration-300 hover:shadow-xl hover:shadow-pink-100/50 hover:-translate-y-1 w-full"
+                        >
                             <div className="flex flex-wrap gap-2 mb-3 sm:mb-4">
                                 {changelog.tag.map((tag) => (
                                     <span key={tag} className="bg-pink-50 text-pink-400 px-3 py-1 rounded-full text-sm font-medium">
