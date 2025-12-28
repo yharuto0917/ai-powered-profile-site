@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function MySkillsIn() {
     return (
         <div className="flex justify-center mb-14 sm:mb-20 sm:px-0">

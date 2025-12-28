@@ -47,7 +47,7 @@ export default function RootLayout({
           <AskMeWithAI />
           <footer>
             <div className="flex items-center justify-center py-3 md:text-[4px]">
-              <p className="text-[12px] text-gray-500">Copyright © 2025 YAMAZAKI Haruto. All rights reserved.</p>
+              <p className="text-[12px] text-gray-500">Copyright © 2026 YAMAZAKI Haruto. All rights reserved.</p>
             </div>
           </footer>
         </SakuraBackground>
