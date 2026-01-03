@@ -17,9 +17,11 @@ export default function IntroBoxIn() {
                             Deep Learning / AI Engineer majoring in LLMs.
                         </p>
                         <p className="text-gray-600 text-base sm:text-lg leading-relaxed max-w-2xl mx-auto md:mx-0">
-                            I am a Deep Learning Engineer majoring in LLMs. I focus on the development of making AI helpful, useful, and accessible for everyone.<br /><br />
-                            I am also developing web applications using Next.js, Vite, React, TypeScript, Tailwind CSS and more.
-                            I develop web applications to make AI helpful, useful, and accessible for everyone.
+                            I am a Deep Learning Engineer majoring in LLMs. I aim to advance SLMs operating on-device to a frontier level using inference techniques based on improved quantization technology and reinforcement learning based reasoning.
+                            <br /><br />
+                            I am also developing web applications using Next.js, Vite, React, TypeScript, Tailwind CSS and more. I aim to make AI easier and more accessible for many people through AI Chatbots and AI Agents.
+                            <br /><br />
+                            My belief is "Making AI Helpful for Everyone." and I strive to develop AI that leaves no one behind.
                         </p>
                     </div>
                 </div>
