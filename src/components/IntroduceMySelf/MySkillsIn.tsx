@@ -29,8 +29,8 @@ export default function MySkillsIn() {
                             <li className="text-gray-600 text-base sm:text-lg md:text-xl">・PyTorch</li>
                             <li className="text-gray-600 text-base sm:text-lg md:text-xl">・TensorFlow</li>
                             <li className="text-gray-600 text-base sm:text-lg md:text-xl">・Keras</li>
-                            <li className="text-gray-600 text-base sm:text-lg md:text-xl">・LangChain</li>
-                            <li className="text-gray-600 text-base sm:text-lg md:text-xl">・LangGraph</li>
+                            <li className="text-gray-600 text-base sm:text-lg md:text-xl">・LangChain/LangGraph</li>
+                            <li className="text-gray-600 text-base sm:text-lg md:text-xl">・FastAPI</li>
                             <li className="text-gray-600 text-base sm:text-lg md:text-xl">・Google ADK</li>
                             <li className="text-gray-600 text-base sm:text-lg md:text-xl">・Vercel AI SDK</li>
                             <li className="text-gray-600 text-base sm:text-lg md:text-xl">・Next.js</li>

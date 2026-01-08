@@ -20,6 +20,8 @@ export default function AskMeWithAI() {
     const [messages, setMessages] = useState<ChatMessage[]>([]);
     const [isComposing, setIsComposing] = useState(false);
 
+    const autoExpandLockedRef = useRef(false);
+
     const inputRef = useRef<HTMLInputElement | null>(null);
 
     const showInput = displayState !== "collapsed";
@@ -30,10 +32,11 @@ export default function AskMeWithAI() {
 
             setDisplayState((prev) => {
                 if (!scrolled) {
-                    return "expandedAuto";
+                    return autoExpandLockedRef.current ? prev : "expandedAuto";
                 }
 
                 if (prev === "expandedAuto") {
+                    autoExpandLockedRef.current = true;
                     return "collapsed";
                 }
 
@@ -65,6 +68,7 @@ export default function AskMeWithAI() {
     };
 
     const handleClose = () => {
+        autoExpandLockedRef.current = true;
         setDisplayState("collapsed");
         setIsChatOpen(false);
         setMessage("");
@@ -168,7 +172,7 @@ export default function AskMeWithAI() {
                             onKeyDown={handleKeyDown}
                             onCompositionStart={handleCompositionStart}
                             onCompositionEnd={handleCompositionEnd}
-                            placeholder="Geminiに質問"
+                            placeholder="AIに質問"
                             className="flex-1 bg-transparent outline-none text-sm text-[#5d4037] placeholder:text-[#d48a97] font-medium"
                             disabled={!showInput}
                         />

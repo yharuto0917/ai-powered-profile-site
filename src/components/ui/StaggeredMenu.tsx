@@ -54,6 +54,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   onMenuClose,
 }: StaggeredMenuProps) => {
   const [open, setOpen] = useState(false);
+  const [elevateZ, setElevateZ] = useState(false);
   const [isReady, setIsReady] = useState(false);
   const openRef = useRef(false);
 
@@ -294,6 +295,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
         if (socialLinks.length) gsap.set(socialLinks, { y: 25, opacity: 0 });
 
         busyRef.current = false;
+        if (!openRef.current) setElevateZ(false);
       },
     });
   }, [position]);
@@ -466,6 +468,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
     setOpen(target);
 
     if (target) {
+      setElevateZ(true);
       onMenuOpen?.();
       playOpen();
     } else {
@@ -505,7 +508,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 
   return (
     <div
-      className={`sm-scope z-40 pointer-events-none ${isFixed ? "fixed top-0 left-0 w-screen h-screen overflow-hidden" : "w-full h-full"}`}
+      className={`sm-scope ${elevateZ ? "z-[60]" : "z-40"} pointer-events-none ${isFixed ? "fixed top-0 left-0 w-screen h-screen overflow-hidden" : "w-full h-full"}`}
     >
       <div
         className={
