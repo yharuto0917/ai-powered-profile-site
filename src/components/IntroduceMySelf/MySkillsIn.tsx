@@ -1,8 +1,6 @@
-import React from 'react';
-
 export default function MySkillsIn() {
     return (
-        <div className="flex justify-center pt-8 sm:pt-10 mb-14 sm:mb-20 px-4 sm:px-0">
+        <div className="flex justify-center mb-14 sm:mb-20 sm:px-0">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 w-full">
                 {/* Programming Languages */}
                 <div className="flex flex-col gap-2 bg-white/90 rounded-3xl shadow-lg shadow-pink-100 border border-pink-100 p-6 sm:p-8 w-full">
@@ -31,8 +29,8 @@ export default function MySkillsIn() {
                             <li className="text-gray-600 text-base sm:text-lg md:text-xl">・PyTorch</li>
                             <li className="text-gray-600 text-base sm:text-lg md:text-xl">・TensorFlow</li>
                             <li className="text-gray-600 text-base sm:text-lg md:text-xl">・Keras</li>
-                            <li className="text-gray-600 text-base sm:text-lg md:text-xl">・LangChain</li>
-                            <li className="text-gray-600 text-base sm:text-lg md:text-xl">・LangGraph</li>
+                            <li className="text-gray-600 text-base sm:text-lg md:text-xl">・LangChain/LangGraph</li>
+                            <li className="text-gray-600 text-base sm:text-lg md:text-xl">・FastAPI</li>
                             <li className="text-gray-600 text-base sm:text-lg md:text-xl">・Google ADK</li>
                             <li className="text-gray-600 text-base sm:text-lg md:text-xl">・Vercel AI SDK</li>
                             <li className="text-gray-600 text-base sm:text-lg md:text-xl">・Next.js</li>

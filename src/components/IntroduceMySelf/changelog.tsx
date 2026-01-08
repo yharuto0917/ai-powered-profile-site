@@ -13,7 +13,7 @@ export default function ChangeLog() {
                 className="flex justify-center px-4 sm:px-6"
             >
                 <div className="w-full max-w-[65rem]">
-                    <h2 className="title-font text-2xl sm:text-3xl md:text-4xl font-bold -rotate-2 md:-rotate-4 ml-4 sm:ml-12 md:ml-20 z-5 relative">
+                    <h2 className="title-font text-2xl sm:text-4xl -rotate-4 md:-rotate-2 font-bold ml-10 md:ml-10 relative">
                         Change Log
                     </h2>
                     <ChangeLogIn />

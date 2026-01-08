@@ -6,20 +6,9 @@ export const changelogContents = [
             'Release',
             'Web'
         ],
-        date: '2025-12-01',
-        title: 'ポートフォリオサイトをリリースしました！',
-        contents: 'ポートフォリオサイトをリリースしました！！[GitHub](https://github.com/yharuto0917)からソースコードをご確認いただけます！',
+        date: '2026-1-9',
+        title: 'Launch of my new portfolio website!!',
+        contents: 'I am excited to share the launch of my new portfolio website. You can check the source code on **[GitHub](https://github.com/yharuto0917)**.',
         url: 'https://github.com/yharuto0917/ai-powered-profile-site'
-    },
-    {
-        tag: [
-            'Relase',
-            'MCP',
-            'AI Agents'
-        ],
-        date: '2025-12-05',
-        title: 'ThreadsMCPをリリースしました！',
-        contents: 'ThreadsMCPをリリースしました！！[GitHub](https://github.com/yharuto0917)からソースコードをご確認いただけます！',
-        url: 'https://github.com/yharuto0917/ThreadsMCP'
     }
 ]

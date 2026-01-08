@@ -13,7 +13,7 @@ interface SocialItem {
 }
 
 const menuItems: MenuItem[] = [
-    { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
+    { label: 'Home', ariaLabel: 'Go to home page', link: '#home' },
     { label: 'About', ariaLabel: 'Learn about us', link: '#about' },
     { label: 'Skills', ariaLabel: 'View my skills', link: '#skills' },
     { label: 'ChangeLog', ariaLabel: 'View my changelog', link: '#changelog' },
