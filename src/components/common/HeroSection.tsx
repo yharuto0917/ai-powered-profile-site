@@ -11,7 +11,7 @@ export default function HeroSection() {
                 </motion.div>
                 <motion.div layout="size" className="inline-block">
                     <RotatingText
-                        texts={['Helpful', 'Meaningful', 'Valuable', 'Useful', 'Enjoyable']}
+                        texts={['Helpful', 'Meaningful', 'Valuable', 'Useful']}
                         mainClassName="mx-2 sm:mx-3 md:mx-5 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center inline-block bg-red-100 rounded-lg px-3 sm:px-4 py-1 sm:py-2"
                         staggerFrom="last" initial={{ y: "100%" }} animate={{ y: 0 }} exit={{ y: "-120%" }}
                         staggerDuration={0.025} splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
