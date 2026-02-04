@@ -90,6 +90,8 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
       const plusV = plusVRef.current;
       const icon = iconRef.current;
       const textInner = textInnerRef.current;
+      const textWrap = textWrapRef.current;
+      const toggleBtn = toggleBtnRef.current;
 
       if (!panel || !plusH || !plusV || !icon || !textInner) return;
 
@@ -110,8 +112,37 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 
       gsap.set(textInner, { yPercent: 0 });
 
-      if (toggleBtnRef.current)
-        gsap.set(toggleBtnRef.current, { color: menuButtonColor });
+      if (toggleBtn) {
+        gsap.set(toggleBtn, { color: menuButtonColor });
+
+        // テキスト幅を計算してCSS変数として設定
+        if (textWrap) {
+          const tempSpan = document.createElement('span');
+          tempSpan.style.visibility = 'hidden';
+          tempSpan.style.position = 'absolute';
+          tempSpan.style.whiteSpace = 'nowrap';
+          const computedStyle = window.getComputedStyle(toggleBtn);
+          tempSpan.style.fontSize = computedStyle.fontSize;
+          tempSpan.style.fontWeight = computedStyle.fontWeight;
+          tempSpan.style.fontFamily = computedStyle.fontFamily;
+          tempSpan.style.letterSpacing = computedStyle.letterSpacing;
+
+          document.body.appendChild(tempSpan);
+
+          tempSpan.textContent = 'Menu';
+          const menuWidth = tempSpan.getBoundingClientRect().width;
+          tempSpan.textContent = 'Close';
+          const closeWidth = tempSpan.getBoundingClientRect().width;
+
+          document.body.removeChild(tempSpan);
+
+          // 最大幅を取得し、少し余裕を持たせる
+          const maxWidth = Math.max(menuWidth, closeWidth);
+          const safeWidth = Math.ceil(maxWidth) + 2; // 2px余裕を持たせる
+
+          textWrap.style.setProperty('--sm-toggle-width', `${safeWidth}px`);
+        }
+      }
 
       setIsReady(true);
     });
