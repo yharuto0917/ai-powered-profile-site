@@ -617,7 +617,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
               >
                 <span
                   ref={textInnerRef}
-                  className="sm-toggle-textInner flex flex-col leading-[0.8em]"
+                  className="sm-toggle-textInner flex flex-col leading-[0.8em] pt-[1px]"
                 >
                   {textLines.map((l, i) => (
                     <span
