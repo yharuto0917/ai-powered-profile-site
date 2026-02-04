@@ -44,7 +44,7 @@ const SakuraBackground = ({ children }: ChildrenProps) => {
     }, []);
 
     return (
-        <div className="relative min-h-screen">
+        <div className="relative min-h-[100dvh]">
             <style>
                 {`
                 @keyframes fall {
@@ -53,7 +53,7 @@ const SakuraBackground = ({ children }: ChildrenProps) => {
                     opacity: 1;
                     }
                     100% {
-                    transform: translateY(100vh) translateX(var(--sway)) rotate(var(--rotation));
+                    transform: translateY(100dvh) translateX(var(--sway)) rotate(var(--rotation));
                     opacity: 0;
                     }
                 }

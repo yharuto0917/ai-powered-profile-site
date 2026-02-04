@@ -7,7 +7,7 @@ import HeroSection from "@/components/common/HeroSection";
 export default function Home() {
   return (
     <>
-      <div id="home" style={{ height: '100vh', width: '100%', overflowX: 'hidden', position: 'relative' }}>
+      <div id="home" style={{ height: '100dvh', width: '100%', overflowX: 'hidden', position: 'relative' }}>
         <HeroSection />
       </div>
       <div className="flex flex-col justify-center items-center pb-30">
