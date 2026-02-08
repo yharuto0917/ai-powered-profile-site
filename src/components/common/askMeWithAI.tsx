@@ -1,30 +1,54 @@
 "use client";
 
-import { useEffect, useRef, useState, type KeyboardEvent } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Send, X } from "lucide-react";
+import { useSubmitJP } from "use-submit-jp";
+import { useChat } from "@ai-sdk/react";
+import { DefaultChatTransport } from "ai";
 import AskMeWithAIChatUI from "./askMeWithAIChatUI";
-
-export type ChatMessage = {
-    id: number;
-    text: string;
-    sender: "user" | "bot";
-    timestamp: string;
-};
 
 type DisplayState = "expandedAuto" | "collapsed" | "expandedManual";
 
 export default function AskMeWithAI() {
     const [displayState, setDisplayState] = useState<DisplayState>("expandedAuto");
     const [isChatOpen, setIsChatOpen] = useState(false);
-    const [message, setMessage] = useState("");
-    const [messages, setMessages] = useState<ChatMessage[]>([]);
-    const [isComposing, setIsComposing] = useState(false);
+    const [input, setInput] = useState("");
+
+    const transport = useMemo(
+        () => new DefaultChatTransport({ api: "/api/chat" }),
+        [],
+    );
+
+    const { messages, sendMessage, status } = useChat({
+        transport,
+        onError: (error) => {
+            console.error("Chat error:", error);
+        },
+    });
 
     const autoExpandLockedRef = useRef(false);
-
     const inputRef = useRef<HTMLInputElement | null>(null);
 
     const showInput = displayState !== "collapsed";
+
+    const handleSend = () => {
+        const trimmed = input.trim();
+        if (!trimmed) return;
+
+        sendMessage({ text: trimmed });
+        setInput("");
+
+        if (!isChatOpen) {
+            setIsChatOpen(true);
+        }
+    };
+
+    const { formProps } = useSubmitJP({
+        onSubmit: (e) => {
+            e.preventDefault();
+            handleSend();
+        },
+    });
 
     useEffect(() => {
         const handleScroll = () => {
@@ -51,9 +75,7 @@ export default function AskMeWithAI() {
     }, []);
 
     useEffect(() => {
-        if (!showInput) {
-            return;
-        }
+        if (!showInput) return;
 
         const timeoutId = window.setTimeout(() => {
             inputRef.current?.focus();
@@ -61,7 +83,6 @@ export default function AskMeWithAI() {
 
         return () => window.clearTimeout(timeoutId);
     }, [showInput]);
-
 
     const handleExpand = () => {
         setDisplayState("expandedManual");
@@ -71,62 +92,11 @@ export default function AskMeWithAI() {
         autoExpandLockedRef.current = true;
         setDisplayState("collapsed");
         setIsChatOpen(false);
-        setMessage("");
+        setInput("");
     };
 
     const handleCollapseChat = () => {
         setIsChatOpen(false);
-    };
-
-    const handleSend = () => {
-        const trimmed = message.trim();
-        if (!trimmed) {
-            return;
-        }
-
-        const timestamp = new Date().toLocaleTimeString("ja-JP", { hour: "2-digit", minute: "2-digit" });
-
-        const newMessage: ChatMessage = {
-            id: Date.now(),
-            text: trimmed,
-            sender: "user",
-            timestamp,
-        };
-
-        setMessages((prev) => [...prev, newMessage]);
-        setMessage("");
-
-        if (!isChatOpen) {
-            setIsChatOpen(true);
-        }
-
-        window.setTimeout(() => {
-            const replyTimestamp = new Date().toLocaleTimeString("ja-JP", { hour: "2-digit", minute: "2-digit" });
-
-            const botReply: ChatMessage = {
-                id: Date.now() + 1,
-                text: "現在、Ask Me With AIは使用できません。",
-                sender: "bot",
-                timestamp: replyTimestamp,
-            };
-
-            setMessages((prev) => [...prev, botReply]);
-        }, 1000);
-    };
-
-    const handleKeyDown = (event: KeyboardEvent<HTMLInputElement>) => {
-        if (event.key === "Enter" && !event.shiftKey && !isComposing) {
-            event.preventDefault();
-            handleSend();
-        }
-    };
-
-    const handleCompositionStart = () => {
-        setIsComposing(true);
-    };
-
-    const handleCompositionEnd = () => {
-        setIsComposing(false);
     };
 
     return (
@@ -134,8 +104,12 @@ export default function AskMeWithAI() {
             <div className="relative flex justify-center">
                 <AskMeWithAIChatUI
                     messages={messages}
+                    status={status}
                     isChatOpen={isChatOpen}
                     onClose={handleCollapseChat}
+                    input={input}
+                    onInputChange={setInput}
+                    onSend={handleSend}
                 />
 
                 <div
@@ -152,7 +126,8 @@ export default function AskMeWithAI() {
                         <span>Ask Me With AI</span>
                     </div>
 
-                    <div
+                    <form
+                        {...formProps}
                         className={`absolute inset-0 flex items-center px-4 transition-all duration-300 ${showInput ? "opacity-100" : "opacity-0 pointer-events-none"
                             }`}
                     >
@@ -167,28 +142,24 @@ export default function AskMeWithAI() {
                         <input
                             ref={inputRef}
                             type="text"
-                            value={message}
-                            onChange={(event) => setMessage(event.target.value)}
-                            onKeyDown={handleKeyDown}
-                            onCompositionStart={handleCompositionStart}
-                            onCompositionEnd={handleCompositionEnd}
+                            value={input}
+                            onChange={(event) => setInput(event.target.value)}
                             placeholder="AIに質問"
                             className="flex-1 bg-transparent outline-none text-sm text-[#5d4037] placeholder:text-[#d48a97] font-medium"
                             disabled={!showInput}
                         />
 
                         <button
-                            type="button"
-                            onClick={handleSend}
-                            disabled={!message.trim()}
-                            className={`ml-3 rounded-full p-2.5 transition-all duration-200 ${message.trim()
+                            type="submit"
+                            disabled={!input.trim() || status !== "ready"}
+                            className={`ml-3 rounded-full p-2.5 transition-all duration-200 ${input.trim() && status === "ready"
                                     ? "bg-[#FFB7C5] text-white hover:scale-105 shadow-md"
                                     : "bg-pink-100/50 text-[#FFB7C5] cursor-not-allowed"
                                 }`}
                         >
                             <Send size={16} />
                         </button>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
