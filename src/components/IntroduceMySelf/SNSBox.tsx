@@ -42,7 +42,7 @@ export default function SNSBox() {
                             </Link>
 
                             {/* X (Twitter) */}
-                            <Link href="https://x.com/yharuto917" target="_blank" rel="noopener noreferrer"
+                            <Link href="https://x.com/yharuto0917" target="_blank" rel="noopener noreferrer"
                                 className="flex flex-col items-center gap-2 sm:gap-3 group p-3 sm:p-4 rounded-2xl hover:bg-pink-50/50 transition-all duration-300">
                                 <div className="p-2.5 sm:p-3 bg-black/5 rounded-full group-hover:bg-white group-hover:shadow-md transition-all">
                                     <Twitter className="w-7 h-7 sm:w-8 sm:h-8 text-gray-700 group-hover:text-black" />
@@ -51,7 +51,7 @@ export default function SNSBox() {
                             </Link>
 
                             {/* Instagram */}
-                            <Link href="https://instagram.com/yamazaki.ha" target="_blank" rel="noopener noreferrer"
+                            <Link href="https://instagram.com/yharuto0917" target="_blank" rel="noopener noreferrer"
                                 className="flex flex-col items-center gap-2 sm:gap-3 group p-3 sm:p-4 rounded-2xl hover:bg-pink-50/50 transition-all duration-300">
                                 <div className="p-2.5 sm:p-3 bg-pink-100 rounded-full group-hover:bg-white group-hover:shadow-md transition-all">
                                     <Instagram className="w-7 h-7 sm:w-8 sm:h-8 text-gray-700 group-hover:text-pink-600" />
@@ -60,7 +60,7 @@ export default function SNSBox() {
                             </Link>
 
                             {/* Threads */}
-                            <Link href="https://threads.com/@yamazaki.ha" target="_blank" rel="noopener noreferrer"
+                            <Link href="https://threads.com/@yharuto0917" target="_blank" rel="noopener noreferrer"
                                 className="flex flex-col items-center gap-2 sm:gap-3 group p-3 sm:p-4 rounded-2xl hover:bg-pink-50/50 transition-all duration-300">
                                 <div className="p-2.5 sm:p-3 bg-gray-100 rounded-full group-hover:bg-white group-hover:shadow-md transition-all">
                                     <AtSign className="w-7 h-7 sm:w-8 sm:h-8 text-gray-700 group-hover:text-black" />
