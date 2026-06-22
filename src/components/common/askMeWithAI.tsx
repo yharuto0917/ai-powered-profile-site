@@ -147,6 +147,7 @@ export default function AskMeWithAI() {
                             placeholder="AIに質問"
                             className="flex-1 bg-transparent outline-none text-base text-[#5d4037] placeholder:text-[#d48a97] font-medium"
                             disabled={!showInput}
+                            autoComplete="off"
                         />
 
                         <button
