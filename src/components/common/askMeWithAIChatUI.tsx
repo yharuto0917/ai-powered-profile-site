@@ -34,6 +34,7 @@ export default function AskMeWithAIChatUI({
     const drawerRef = useRef<HTMLDivElement | null>(null);
     const [mounted, setMounted] = useState(false);
     const [dragOffsetY, setDragOffsetY] = useState(0);
+    const [keyboardOffset, setKeyboardOffset] = useState(0);
     const isDragging = useRef(false);
     const dragStartY = useRef(0);
 
@@ -125,6 +126,36 @@ export default function AskMeWithAIChatUI({
         };
     }, [isChatOpen]);
 
+    // iOS Safari ではソフトキーボード表示でビジュアルビューポートが縮むが
+    // fixed 要素は追従しない。visualViewport から算出したキーボード高さ分だけ
+    // ドロワーを押し上げ、開いた瞬間のレイアウトのバタつきを防ぐ。
+    useEffect(() => {
+        if (!isChatOpen) {
+            setKeyboardOffset(0);
+            return;
+        }
+
+        const viewport = window.visualViewport;
+        if (!viewport) return;
+
+        const handleViewportChange = () => {
+            const offset = Math.max(
+                0,
+                window.innerHeight - viewport.height - viewport.offsetTop,
+            );
+            setKeyboardOffset(offset);
+        };
+
+        handleViewportChange();
+        viewport.addEventListener("resize", handleViewportChange);
+        viewport.addEventListener("scroll", handleViewportChange);
+
+        return () => {
+            viewport.removeEventListener("resize", handleViewportChange);
+            viewport.removeEventListener("scroll", handleViewportChange);
+        };
+    }, [isChatOpen]);
+
     if (!mounted) return null;
 
     const isLoading = status === "submitted" || status === "streaming";
@@ -143,6 +174,7 @@ export default function AskMeWithAIChatUI({
                 className={`fixed bottom-0 left-0 right-0 z-[56] flex justify-center ${
                     isChatOpen ? "" : "pointer-events-none"
                 }`}
+                style={{ paddingBottom: keyboardOffset }}
                 onClick={onClose}
             >
                 <div
@@ -175,7 +207,7 @@ export default function AskMeWithAIChatUI({
 
                     <div
                         ref={chatContainerRef}
-                        className="h-[50dvh] overflow-y-auto p-4 space-y-4 bg-white"
+                        className="h-[50svh] overflow-y-auto p-4 space-y-4 bg-white"
                     >
                         {messages.length === 0 ? (
                             <div className="flex h-full flex-col items-center justify-center text-[#d48a97] gap-2">
@@ -248,7 +280,7 @@ export default function AskMeWithAIChatUI({
                             value={input}
                             onChange={(event) => onInputChange(event.target.value)}
                             placeholder="AIに質問"
-                            className="flex-1 bg-gray-50 rounded-full px-4 py-2.5 outline-none text-sm text-[#5d4037] placeholder:text-[#d48a97] font-medium border border-gray-200 focus:border-[#FFB7C5]/50 transition-colors"
+                            className="flex-1 bg-gray-50 rounded-full px-4 py-2.5 outline-none text-base text-[#5d4037] placeholder:text-[#d48a97] font-medium border border-gray-200 focus:border-[#FFB7C5]/50 transition-colors"
                         />
                         <button
                             type="submit"
