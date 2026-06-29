@@ -23,9 +23,9 @@ const menuItems: MenuItem[] = [
 const socialItems: SocialItem[] = [
     { label: 'GitHub', link: 'https://github.com/yharuto0917' },
     { label: 'Hugging Face', link: 'https://huggingface.co/YHaruto' },
-    { label: 'Twitter(X)', link: 'https://x.com/Yharuto09171700' },
-    { label: 'Instagram', link: 'https://instagram.com/yamazaki.ha' },
-    { label: 'Threads', link: 'https://threads.com/@yamazaki.ha' },
+    { label: 'Twitter(X)', link: 'https://x.com/yharuto0917' },
+    { label: 'Instagram', link: 'https://instagram.com/yharuto0917' },
+    { label: 'Threads', link: 'https://threads.com/@yharuto0917' },
     { label: 'Zenn', link: 'https://zenn.dev/oimachi'}
 ];
 
