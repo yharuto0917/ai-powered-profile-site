@@ -248,7 +248,8 @@ export default function AskMeWithAIChatUI({
                             value={input}
                             onChange={(event) => onInputChange(event.target.value)}
                             placeholder="AIに質問"
-                            className="flex-1 bg-gray-50 rounded-full px-4 py-2.5 outline-none text-sm text-[#5d4037] placeholder:text-[#d48a97] font-medium border border-gray-200 focus:border-[#FFB7C5]/50 transition-colors"
+                            className="flex-1 bg-gray-50 rounded-full px-4 py-2.5 outline-none text-base text-[#5d4037] placeholder:text-[#d48a97] font-medium border border-gray-200 focus:border-[#FFB7C5]/50 transition-colors"
+                            autoComplete="off"
                         />
                         <button
                             type="submit"
