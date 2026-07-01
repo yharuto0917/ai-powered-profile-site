@@ -39,6 +39,10 @@ export default function ChangeLogIn() {
                                     components={{
                                         a: ({ node, ...props }) => (
                                             <a {...props} onClick={(e) => e.stopPropagation()} target="_blank" rel="noopener noreferrer" />
+                                        ),
+                                        img: ({ node, ...props }) => (
+                                            /* eslint-disable-next-line @next/next/no-img-element */
+                                            <img {...props} className="mt-6 sm:mt-8 mb-4 rounded-xl shadow-sm" alt={props.alt || ""} />
                                         )
                                     }}
                                 >

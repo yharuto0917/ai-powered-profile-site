@@ -9,7 +9,7 @@ export default function ChangeLog() {
                 initial={{ opacity: 0, y: 24 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                viewport={{ once: true, amount: 0.4 }}
+                viewport={{ once: true, amount: "some" }}
                 className="flex justify-center px-4 sm:px-6"
             >
                 <div className="w-full max-w-[65rem]">
