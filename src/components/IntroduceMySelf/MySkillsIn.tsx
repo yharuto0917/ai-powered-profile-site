@@ -12,7 +12,7 @@ export default function MySkillsIn() {
                             <li className="text-gray-600 text-base sm:text-lg md:text-xl">・TypeScript</li>
                             <li className="text-gray-600 text-base sm:text-lg md:text-xl">・Dart</li>
                             <li className="text-gray-600 text-base sm:text-lg md:text-xl">・Java</li>
-                            <li className="text-gray-600 text-base sm:text-lg md:text-xl">・Kotlin</li>
+                            <li className="text-gray-600 text-base sm:text-lg md:text-xl">・Go</li>
                             <li className="text-gray-600 text-base sm:text-lg md:text-xl">・C</li>
                             <li className="text-gray-600 text-base sm:text-lg md:text-xl">・HTML</li>
                             <li className="text-gray-600 text-base sm:text-lg md:text-xl">・CSS</li>
@@ -28,8 +28,8 @@ export default function MySkillsIn() {
                         <ul>
                             <li className="text-gray-600 text-base sm:text-lg md:text-xl">・PyTorch</li>
                             <li className="text-gray-600 text-base sm:text-lg md:text-xl">・TensorFlow</li>
-                            <li className="text-gray-600 text-base sm:text-lg md:text-xl">・Keras</li>
-                            <li className="text-gray-600 text-base sm:text-lg md:text-xl">・LangChain/LangGraph</li>
+                            <li className="text-gray-600 text-base sm:text-lg md:text-xl">・Pydantic AI</li>
+                            <li className="text-gray-600 text-base sm:text-lg md:text-xl">・LangGraph</li>
                             <li className="text-gray-600 text-base sm:text-lg md:text-xl">・FastAPI</li>
                             <li className="text-gray-600 text-base sm:text-lg md:text-xl">・Google ADK</li>
                             <li className="text-gray-600 text-base sm:text-lg md:text-xl">・Vercel AI SDK</li>
@@ -48,7 +48,7 @@ export default function MySkillsIn() {
                         <ul>
                             <li className="text-gray-600 text-base sm:text-lg md:text-xl">・Git</li>
                             <li className="text-gray-600 text-base sm:text-lg md:text-xl">・GitHub</li>
-                            <li className="text-gray-600 text-base sm:text-lg md:text-xl">・Hugging Face</li>
+                            <li className="text-gray-600 text-base sm:text-lg md:text-xl">・GitHub Actions</li>
                             <li className="text-gray-600 text-base sm:text-lg md:text-xl">・Docker</li>
                             <li className="text-gray-600 text-base sm:text-lg md:text-xl">・Google Cloud</li>
                             <li className="text-gray-600 text-base sm:text-lg md:text-xl">・Firebase</li>

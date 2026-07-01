@@ -8,7 +8,7 @@ export const changelogContents = [
         ],
         date: '2026-1-9',
         title: 'Launch of my new portfolio website!!',
-        contents: 'I am excited to share the launch of my new portfolio website. You can check the source code on **[GitHub](https://github.com/yharuto0917)**.\n\n![Launch of Portfolio](/images/changelog/changelog-test.png)',
+        contents: 'I am excited to share the launch of my new portfolio website. You can check the source code on **[GitHub](https://github.com/yharuto0917)**.',
         url: 'https://github.com/yharuto0917/ai-powered-profile-site'
     },
     {
@@ -43,7 +43,7 @@ export const changelogContents = [
         ],
         date: '2026-3-25',
         title: 'We operated Google Developer Groups on Campus Japan Hackathon 2026, GDGoC\'s biggest hackathon in Japan!!',
-        contents: 'We operated Google Developer Groups on Campus Japan Hackathon 2026, GDGoC\'s biggest hackathon for the first time. I joined Marketing Team and managed all marketing work from planning as Core Lead. I also attend final Staff in Google Japan. It was a great experience!! Thanks for all attendees and operators!!',
+        contents: 'We operated Google Developer Groups on Campus Japan Hackathon 2026, GDGoC\'s biggest hackathon for the first time. I joined Marketing Team and managed all marketing work from planning as Core Lead. I also attend final Staff in Google Japan. It was a great experience!! Thanks for all attendees and operators!!\n\n![GDGoC Japan Hackathon](/images/changelog/GDGoCJPHack.png)',
         url: 'https://gdsc-jp.connpass.com/event/378883/'
     },
     {
@@ -55,7 +55,7 @@ export const changelogContents = [
         ],
         date: '2026-5-19~20',
         title: 'I was invited to Google I/O 2026 as a Student Developer and it was a great experience!!',
-        contents: 'I was invited to Google I/O 2026 as a Student Developer from Google. I met many developers and learned about the latest trends in AI. Let\'s build Gemini integration App with Google Antigravity 2.0 and Gemini 3.5 Flash!!',
+        contents: 'I was invited to Google I/O 2026 as a Student Developer from Google. I met many developers and learned about the latest trends in AI. Let\'s build Gemini integration App with Google Antigravity 2.0 and Gemini 3.5 Flash!!\n\n![Google I/O 2026](/images/changelog/PXL_20260518_211307937.png)',
         url: 'https://io.google/'
     },
     {
