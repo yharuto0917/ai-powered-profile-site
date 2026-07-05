@@ -22,6 +22,7 @@ import { Star, Box } from "lucide-react";
 import React from "react";
 
 const AntigravityIcon = (props: any) => (
+  // eslint-disable-next-line @next/next/no-img-element
   <img
     src="/antigravity-icon__one-color.png"
     alt="Google Antigravity"

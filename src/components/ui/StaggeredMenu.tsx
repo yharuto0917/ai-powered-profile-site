@@ -248,7 +248,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 
     openTlRef.current = tl;
     return tl;
-  }, [position]);
+  }, []);
 
   const playOpen = useCallback(() => {
     if (busyRef.current) return;
@@ -547,6 +547,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
             className="sm-logo flex items-center select-none pointer-events-auto"
             aria-label="Logo"
           >
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={logoUrl || "/src/assets/logos/reactbits-gh-white.svg"}
               alt="Logo"

@@ -95,6 +95,7 @@ export default function AskMeWithAIChatUI({
   });
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
   }, []);
 
@@ -148,6 +149,7 @@ export default function AskMeWithAIChatUI({
         <div
           ref={drawerRef}
           className={`w-full md:w-1/2 rounded-t-3xl overflow-hidden bg-white shadow-[0_-10px_25px_rgba(0,0,0,0.08)] flex flex-col pointer-events-auto ${
+            // eslint-disable-next-line react-hooks/refs
             isDragging.current ? "" : "transition-transform duration-500 ease-out"
           } ${isChatOpen ? "" : "translate-y-full"}`}
           style={

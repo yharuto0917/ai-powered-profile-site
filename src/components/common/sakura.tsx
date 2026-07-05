@@ -40,6 +40,7 @@ const SakuraBackground = ({ children }: ChildrenProps) => {
         } as React.CSSProperties,
       };
     });
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setPetals(newPetals);
   }, []);
 

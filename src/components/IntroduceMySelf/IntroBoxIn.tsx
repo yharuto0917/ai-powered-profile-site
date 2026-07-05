@@ -33,8 +33,8 @@ export default function IntroBoxIn() {
               Chatbots and AI Agents.
               <br />
               <br />
-              My belief is "Making AI Helpful for Everyone." and I strive to develop AI that leaves
-              no one behind.
+              My belief is &quot;Making AI Helpful for Everyone.&quot; and I strive to develop AI
+              that leaves no one behind.
             </p>
           </div>
         </div>
