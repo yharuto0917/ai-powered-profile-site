@@ -1,0 +1,10 @@
+node_modules
+.next
+out
+build
+dist
+.vscode
+public
+pnpm-lock.yaml
+package-lock.json
+*.md
