@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono,Caveat } from "next/font/google";
+import { Geist, Geist_Mono, Caveat } from "next/font/google";
 import "./globals.css";
 import SakuraBackground from "@/components/common/sakura";
 import HeaderMenu from "@/components/common/headerMenu";
@@ -18,11 +18,11 @@ const geistMono = Geist_Mono({
 const caveat = Caveat({
   variable: "--font-caveat",
   subsets: ["latin"],
-})
+});
 
 export const metadata: Metadata = {
   icons: {
-    icon: '/yharutoIcon.svg',
+    icon: "/yharutoIcon.svg",
   },
   title: "Y.Haruto | AI Engineer",
   description: "Y.Haruto is an AI engineer who is passionate about LLMs.",
@@ -47,7 +47,9 @@ export default function RootLayout({
           <AskMeWithAI />
           <footer>
             <div className="flex items-center justify-center py-3 md:text-[4px]">
-              <p className="text-[12px] text-gray-500">Copyright © 2026 YAMAZAKI Haruto. All rights reserved.</p>
+              <p className="text-[12px] text-gray-500">
+                Copyright © 2026 YAMAZAKI Haruto. All rights reserved.
+              </p>
             </div>
           </footer>
         </SakuraBackground>
