@@ -1,85 +1,121 @@
-'use client';
-import React from 'react';
-import { Github, Twitter, Instagram, Smile, BookOpenText, AtSign } from 'lucide-react';
-import Link from 'next/link';
-import { motion } from 'framer-motion';
+"use client";
+import React from "react";
+import { Github, Twitter, Instagram, Smile, BookOpenText, AtSign } from "lucide-react";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function SNSBox() {
-    return (
-        <div className="pt-20 sm:pt-30 pb-16 sm:pb-20" id="sns">
-            <motion.div
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
-                viewport={{ once: true, amount: 0.4 }}
-                className="flex justify-center px-4 sm:px-6"
-            >
-                <div className="w-full max-w-[65rem]">
-                    <h2 className="title-font text-2xl sm:text-4xl -rotate-4 md:-rotate-2 font-bold ml-10 md:ml-10 relative">
-                        Social Media
-                    </h2>
-                    <div 
-                        data-scroll-center="true"
-                        className="bg-white/90 rounded-3xl shadow-lg shadow-pink-100 border border-pink-100 p-5 sm:p-6"
-                    >
-                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 place-items-center">
-                            {/* GitHub */}
-                            <Link href="https://github.com/yharuto0917" target="_blank" rel="noopener noreferrer"
-                                className="flex flex-col items-center gap-2 sm:gap-3 group p-3 sm:p-4 rounded-2xl hover:bg-pink-50/50 transition-all duration-300">
-                                <div className="p-2.5 sm:p-3 bg-gray-100 rounded-full group-hover:bg-white group-hover:shadow-md transition-all">
-                                    <Github className="w-7 h-7 sm:w-8 sm:h-8 text-gray-700 group-hover:text-black" />
-                                </div>
-                                <span className="font-medium text-sm sm:text-base text-gray-600 group-hover:text-pink-500">GitHub</span>
-                            </Link>
-
-                            {/* Hugging Face */}
-                            <Link href="https://huggingface.co/YHaruto" target="_blank" rel="noopener noreferrer"
-                                className="flex flex-col items-center gap-2 sm:gap-3 group p-3 sm:p-4 rounded-2xl hover:bg-pink-50/50 transition-all duration-300">
-                                <div className="p-2.5 sm:p-3 bg-yellow-100 rounded-full group-hover:bg-white group-hover:shadow-md transition-all">
-                                    <Smile className="w-7 h-7 sm:w-8 sm:h-8 text-gray-700 group-hover:text-yellow-600" />
-                                </div>
-                                <span className="font-medium text-sm sm:text-base text-gray-600 group-hover:text-pink-500">HuggingFace</span>
-                            </Link>
-
-                            {/* X (Twitter) */}
-                            <Link href="https://x.com/yharuto0917" target="_blank" rel="noopener noreferrer"
-                                className="flex flex-col items-center gap-2 sm:gap-3 group p-3 sm:p-4 rounded-2xl hover:bg-pink-50/50 transition-all duration-300">
-                                <div className="p-2.5 sm:p-3 bg-black/5 rounded-full group-hover:bg-white group-hover:shadow-md transition-all">
-                                    <Twitter className="w-7 h-7 sm:w-8 sm:h-8 text-gray-700 group-hover:text-black" />
-                                </div>
-                                <span className="font-medium text-sm sm:text-base text-gray-600 group-hover:text-pink-500">Twitter(X)</span>
-                            </Link>
-
-                            {/* Instagram */}
-                            <Link href="https://instagram.com/yharuto0917" target="_blank" rel="noopener noreferrer"
-                                className="flex flex-col items-center gap-2 sm:gap-3 group p-3 sm:p-4 rounded-2xl hover:bg-pink-50/50 transition-all duration-300">
-                                <div className="p-2.5 sm:p-3 bg-pink-100 rounded-full group-hover:bg-white group-hover:shadow-md transition-all">
-                                    <Instagram className="w-7 h-7 sm:w-8 sm:h-8 text-gray-700 group-hover:text-pink-600" />
-                                </div>
-                                <span className="font-medium text-sm sm:text-base text-gray-600 group-hover:text-pink-500">Instagram</span>
-                            </Link>
-
-                            {/* Threads */}
-                            <Link href="https://threads.com/@yharuto0917" target="_blank" rel="noopener noreferrer"
-                                className="flex flex-col items-center gap-2 sm:gap-3 group p-3 sm:p-4 rounded-2xl hover:bg-pink-50/50 transition-all duration-300">
-                                <div className="p-2.5 sm:p-3 bg-gray-100 rounded-full group-hover:bg-white group-hover:shadow-md transition-all">
-                                    <AtSign className="w-7 h-7 sm:w-8 sm:h-8 text-gray-700 group-hover:text-black" />
-                                </div>
-                                <span className="font-medium text-sm sm:text-base text-gray-600 group-hover:text-pink-500">Threads</span>
-                            </Link>
-
-                            {/* Zenn */}
-                            <Link href="https://zenn.dev/oimachi" target="_blank" rel="noopener noreferrer"
-                                className="flex flex-col items-center gap-2 sm:gap-3 group p-3 sm:p-4 rounded-2xl hover:bg-pink-50/50 transition-all duration-300">
-                                <div className="p-2.5 sm:p-3 bg-blue-100 rounded-full group-hover:bg-white group-hover:shadow-md transition-all">
-                                    <BookOpenText className="w-7 h-7 sm:w-8 sm:h-8 text-gray-700 group-hover:text-blue-500" />
-                                </div>
-                                <span className="font-medium text-sm sm:text-base text-gray-600 group-hover:text-pink-500">Zenn</span>
-                            </Link>
-                        </div>
-                    </div>
+  return (
+    <div className="pt-20 sm:pt-30 pb-16 sm:pb-20" id="sns">
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: true, amount: 0.4 }}
+        className="flex justify-center px-4 sm:px-6"
+      >
+        <div className="w-full max-w-[65rem]">
+          <h2 className="title-font text-2xl sm:text-4xl -rotate-4 md:-rotate-2 font-bold ml-10 md:ml-10 relative">
+            Social Media
+          </h2>
+          <div
+            data-scroll-center="true"
+            className="bg-white/90 rounded-3xl shadow-lg shadow-pink-100 border border-pink-100 p-5 sm:p-6"
+          >
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 place-items-center">
+              {/* GitHub */}
+              <Link
+                href="https://github.com/yharuto0917"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col items-center gap-2 sm:gap-3 group p-3 sm:p-4 rounded-2xl hover:bg-pink-50/50 transition-all duration-300"
+              >
+                <div className="p-2.5 sm:p-3 bg-gray-100 rounded-full group-hover:bg-white group-hover:shadow-md transition-all">
+                  <Github className="w-7 h-7 sm:w-8 sm:h-8 text-gray-700 group-hover:text-black" />
                 </div>
-            </motion.div>
+                <span className="font-medium text-sm sm:text-base text-gray-600 group-hover:text-pink-500">
+                  GitHub
+                </span>
+              </Link>
+
+              {/* Hugging Face */}
+              <Link
+                href="https://huggingface.co/YHaruto"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col items-center gap-2 sm:gap-3 group p-3 sm:p-4 rounded-2xl hover:bg-pink-50/50 transition-all duration-300"
+              >
+                <div className="p-2.5 sm:p-3 bg-yellow-100 rounded-full group-hover:bg-white group-hover:shadow-md transition-all">
+                  <Smile className="w-7 h-7 sm:w-8 sm:h-8 text-gray-700 group-hover:text-yellow-600" />
+                </div>
+                <span className="font-medium text-sm sm:text-base text-gray-600 group-hover:text-pink-500">
+                  HuggingFace
+                </span>
+              </Link>
+
+              {/* X (Twitter) */}
+              <Link
+                href="https://x.com/yharuto0917"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col items-center gap-2 sm:gap-3 group p-3 sm:p-4 rounded-2xl hover:bg-pink-50/50 transition-all duration-300"
+              >
+                <div className="p-2.5 sm:p-3 bg-black/5 rounded-full group-hover:bg-white group-hover:shadow-md transition-all">
+                  <Twitter className="w-7 h-7 sm:w-8 sm:h-8 text-gray-700 group-hover:text-black" />
+                </div>
+                <span className="font-medium text-sm sm:text-base text-gray-600 group-hover:text-pink-500">
+                  Twitter(X)
+                </span>
+              </Link>
+
+              {/* Instagram */}
+              <Link
+                href="https://instagram.com/yharuto0917"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col items-center gap-2 sm:gap-3 group p-3 sm:p-4 rounded-2xl hover:bg-pink-50/50 transition-all duration-300"
+              >
+                <div className="p-2.5 sm:p-3 bg-pink-100 rounded-full group-hover:bg-white group-hover:shadow-md transition-all">
+                  <Instagram className="w-7 h-7 sm:w-8 sm:h-8 text-gray-700 group-hover:text-pink-600" />
+                </div>
+                <span className="font-medium text-sm sm:text-base text-gray-600 group-hover:text-pink-500">
+                  Instagram
+                </span>
+              </Link>
+
+              {/* Threads */}
+              <Link
+                href="https://threads.com/@yharuto0917"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col items-center gap-2 sm:gap-3 group p-3 sm:p-4 rounded-2xl hover:bg-pink-50/50 transition-all duration-300"
+              >
+                <div className="p-2.5 sm:p-3 bg-gray-100 rounded-full group-hover:bg-white group-hover:shadow-md transition-all">
+                  <AtSign className="w-7 h-7 sm:w-8 sm:h-8 text-gray-700 group-hover:text-black" />
+                </div>
+                <span className="font-medium text-sm sm:text-base text-gray-600 group-hover:text-pink-500">
+                  Threads
+                </span>
+              </Link>
+
+              {/* Zenn */}
+              <Link
+                href="https://zenn.dev/oimachi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex flex-col items-center gap-2 sm:gap-3 group p-3 sm:p-4 rounded-2xl hover:bg-pink-50/50 transition-all duration-300"
+              >
+                <div className="p-2.5 sm:p-3 bg-blue-100 rounded-full group-hover:bg-white group-hover:shadow-md transition-all">
+                  <BookOpenText className="w-7 h-7 sm:w-8 sm:h-8 text-gray-700 group-hover:text-blue-500" />
+                </div>
+                <span className="font-medium text-sm sm:text-base text-gray-600 group-hover:text-pink-500">
+                  Zenn
+                </span>
+              </Link>
+            </div>
+          </div>
         </div>
-    )
+      </motion.div>
+    </div>
+  );
 }
