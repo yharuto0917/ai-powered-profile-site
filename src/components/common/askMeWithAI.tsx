@@ -16,7 +16,7 @@ export default function AskMeWithAI() {
 
   const transport = useMemo(() => new DefaultChatTransport({ api: "/api/chat" }), []);
 
-  const { messages, sendMessage, status } = useChat({
+  const { messages, sendMessage, status, error } = useChat({
     transport,
     onError: (error) => {
       console.error("Chat error:", error);
@@ -27,6 +27,7 @@ export default function AskMeWithAI() {
   const inputRef = useRef<HTMLInputElement | null>(null);
 
   const showInput = displayState !== "collapsed";
+  const isSending = status === "submitted" || status === "streaming";
 
   const handleSend = () => {
     const trimmed = input.trim();
@@ -107,6 +108,7 @@ export default function AskMeWithAI() {
           input={input}
           onInputChange={setInput}
           onSend={handleSend}
+          error={error}
         />
 
         <div
@@ -152,9 +154,9 @@ export default function AskMeWithAI() {
 
             <button
               type="submit"
-              disabled={!input.trim() || status !== "ready"}
+              disabled={!input.trim() || isSending}
               className={`ml-3 rounded-full p-2.5 transition-all duration-200 ${
-                input.trim() && status === "ready"
+                input.trim() && !isSending
                   ? "bg-[#FFB7C5] text-white hover:scale-105 shadow-md"
                   : "bg-pink-100/50 text-[#FFB7C5] cursor-not-allowed"
               }`}
