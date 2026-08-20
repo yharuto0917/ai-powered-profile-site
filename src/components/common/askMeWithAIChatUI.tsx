@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { Send, Loader2 } from "lucide-react";
+import { Send, Loader2, AlertCircle } from "lucide-react";
 import { useSubmitJP } from "use-submit-jp";
 import type { UIMessage } from "ai";
 import ReactMarkdown from "react-markdown";
@@ -18,6 +18,7 @@ type AskMeWithAIChatUIProps = {
   input: string;
   onInputChange: (value: string) => void;
   onSend: () => void;
+  error?: Error;
 };
 
 export default function AskMeWithAIChatUI({
@@ -28,6 +29,7 @@ export default function AskMeWithAIChatUI({
   input,
   onInputChange,
   onSend,
+  error,
 }: AskMeWithAIChatUIProps) {
   const chatContainerRef = useRef<HTMLDivElement | null>(null);
   const drawerInputRef = useRef<HTMLInputElement | null>(null);
@@ -180,7 +182,7 @@ export default function AskMeWithAIChatUI({
           </div>
 
           <div ref={chatContainerRef} className="h-[50dvh] overflow-y-auto p-4 space-y-4 bg-white">
-            {messages.length === 0 ? (
+            {messages.length === 0 && !error ? (
               <div className="flex h-full flex-col items-center justify-center text-[#d48a97] gap-2">
                 <span className="text-sm">まだメッセージはありません</span>
               </div>
@@ -245,6 +247,17 @@ export default function AskMeWithAIChatUI({
                   <div className="flex justify-start">
                     <div className="max-w-[75%] px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-2xl rounded-tl-sm shadow-sm">
                       <Loader2 size={16} className="animate-spin text-[#d48a97]" />
+                    </div>
+                  </div>
+                )}
+                {error && (
+                  <div className="flex justify-start" role="alert">
+                    <div className="max-w-[75%] flex items-start gap-2 px-4 py-2.5 bg-red-50 text-red-700 border border-red-200 rounded-2xl rounded-tl-sm shadow-sm">
+                      <AlertCircle size={16} className="mt-0.5 shrink-0" />
+                      <p className="text-sm leading-relaxed font-medium">
+                        {error.message ||
+                          "エラーが発生しました。しばらく経ってから再度お試しください。"}
+                      </p>
                     </div>
                   </div>
                 )}
