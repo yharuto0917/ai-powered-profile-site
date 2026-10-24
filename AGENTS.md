@@ -49,14 +49,13 @@
 - subagentsを使用する際のモデルは必ずClaude Opus又はSonnet、Gemini Pro、Flashのどれかを使用し、それ以外のモデルは使用しないこと。
 - リサーチタスクなどContextの肥大化が懸念されるタスクは積極的にsubagentsを用いること。
 
-## 技術方針
-
-- **データベースマイグレーション**: `drizzle-kit push` は禁止する。同一D1データベースにOpenNextのtag-cacheテーブルが同居するため、スキーマ不整合を避けるために必ずマイグレーションファイルを生成して適用すること。
-
 ## 主要コマンド
 
-- `pnpm dev`: ローカル開発環境の起動（Next.jsとHono Workerの同時起動）
-- `pnpm check`: コード品質の一括チェック（lint, format:check, typecheck, test, build）
-- `pnpm preview:full`: OpenNextビルド及びWranglerを用いたローカル動作確認
-- `pnpm deploy`: 本番環境へのデプロイ（demos Workerを先にデプロイしてから、webをデプロイする）
-- `pnpm typegen`: Cloudflare Bindingsの型定義生成
+- `pnpm dev`: ローカル開発環境の起動（Next.js開発サーバーの起動）
+- `pnpm build`: プロダクションビルド（Next.js Turbopack）
+- `pnpm start`: プロダクションビルド成果物の起動
+- `pnpm lint`: ESLintによる静的解析
+- `pnpm format`: Prettierによるコードフォーマット
+- `pnpm format:check`: Prettierによるコードフォーマットチェック
+- `pnpm typecheck`: TypeScriptの型チェック
+- `pnpm check`: コード品質の一括チェック（lint, format:check, typecheck, build）
